@@ -2,23 +2,28 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDateTime;
 
 public class Instalacion {
-    // Atributos
+
     private String idInstalacion;
     private String nombreInstalacion;
     private Entrenador entrenadorAsignado;
-    private List<Socio> listaSociosInscritos;
+    private List<Socio> sociosAsignados;
+    private LocalDateTime fechaHora;
 
-    // Cosntructor
-    public Instalacion(String idInstalacion, String nombreInstalacion, Entrenador entrenadorAsignado) {
+    public Instalacion(String idInstalacion, String nombreInstalacion) {
         this.idInstalacion = idInstalacion;
         this.nombreInstalacion = nombreInstalacion;
-        this.entrenadorAsignado = entrenadorAsignado;
-        this.listaSociosInscritos = new ArrayList<>();
+        this.sociosAsignados = new ArrayList<>();
     }
 
-    // Getters and setters
+    public void asignarUso(Entrenador entrenador, List<Socio> socios, LocalDateTime fechaHora) {
+        this.entrenadorAsignado = entrenador;
+        this.sociosAsignados = socios;
+        this.fechaHora = fechaHora;
+    }
+
     public String getIdInstalacion() {
         return idInstalacion;
     }
@@ -43,12 +48,20 @@ public class Instalacion {
         this.entrenadorAsignado = entrenadorAsignado;
     }
 
-    public List<Socio> getListaSociosInscritos() {
-        return listaSociosInscritos;
+    public List<Socio> getSociosAsignados() {
+        return sociosAsignados;
     }
 
-    public void setListaSociosInscritos(List<Socio> listaSociosInscritos) {
-        this.listaSociosInscritos = listaSociosInscritos;
+    public void setSociosAsignados(List<Socio> sociosAsignados) {
+        this.sociosAsignados = sociosAsignados;
+    }
+
+    public LocalDateTime getFechaHora() {
+        return fechaHora;
+    }
+
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
     }
 
 }

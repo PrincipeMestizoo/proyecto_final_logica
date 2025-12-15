@@ -3,23 +3,25 @@ package util;
 import java.util.Scanner;
 
 public class Util {
-    Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }
 
-    public int ingresarEntero() {
+    public static int ingresarEntero() {
         int entero = scanner.nextInt();
+        scanner.nextLine();
         return entero;
     }
 
-    public double ingresarDouble() {
+    public static double ingresarDouble() {
         double decimal = scanner.nextDouble();
+        scanner.nextLine();
         return decimal;
     }
 
-    public String ingresarTexto() {
+    public static String ingresarTexto() {
         String texto = scanner.nextLine();
         return texto;
     }

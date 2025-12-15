@@ -4,16 +4,13 @@ import enums.TipoEspecialidad;
 
 public class Entrenador extends Usuario {
 
-    // Atributo propio de la clase hija Entrenador
     private TipoEspecialidad especialidad;
 
-    // Superconstructor
-    public Entrenador(String nombre, String id, TipoEspecialidad especialidad) {
-        super(nombre, id);
+    public Entrenador(String id, String nombre, TipoEspecialidad especialidad) {
+        super(id, nombre);
         this.especialidad = especialidad;
     }
 
-    // Getters and setters
     public TipoEspecialidad getEspecialidad() {
         return especialidad;
     }
@@ -21,5 +18,4 @@ public class Entrenador extends Usuario {
     public void setEspecialidad(TipoEspecialidad especialidad) {
         this.especialidad = especialidad;
     }
-
 }
