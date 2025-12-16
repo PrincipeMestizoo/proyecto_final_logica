@@ -22,6 +22,7 @@ public class MenuEntrenadores {
                     1. Crear entrenador
                     2. Buscar entrenador por ID
                     3. Listar entrenadores
+                    4. Eliminar entrenadores
                     0. Volver
                     """);
 
@@ -31,6 +32,7 @@ public class MenuEntrenadores {
                 case 1 -> crearEntrenador();
                 case 2 -> buscarEntrenador();
                 case 3 -> verEntrenadores();
+                case 4 -> eliminarEntrenadores();
                 case 0 -> Util.mostrarMensaje("Volviendo...");
                 default -> Util.mostrarMensaje("Opción inválida");
             }
@@ -69,6 +71,20 @@ public class MenuEntrenadores {
 
     private void verEntrenadores() {
         admin.getAdminEntrenadores().listarEntrenadores();
+    }
+
+    private void eliminarEntrenadores() {
+        Util.mostrarMensaje("Ingrese ID:");
+        String id = Util.ingresarTexto();
+
+        Entrenador entrenador = admin.getAdminEntrenadores().buscarPorId(id);
+
+        if (entrenador == null) {
+            Util.mostrarMensaje("Entrenador no encontrado.");
+        } else {
+            admin.getAdminEntrenadores().eliminarEntrenadores(entrenador);
+            Util.mostrarMensaje("Entrenador: eliminado");
+        }
     }
 
 }

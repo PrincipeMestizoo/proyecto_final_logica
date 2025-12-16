@@ -16,8 +16,21 @@ public class AdministradorInstalaciones {
         instalaciones = new ArrayList<>();
     }
 
+    public Instalacion buscarInstalacion(String id) {
+        for (Instalacion instalacion : instalaciones) {
+            if (instalacion.getIdInstalacion().equals(id)) {
+                return instalacion;
+            }
+        }
+        return null;
+    }
+
     public void agregarInstalacion(Instalacion instalacion) {
         instalaciones.add(instalacion);
+    }
+
+    public void eliminarInstalacion(Instalacion instalacion) {
+        instalaciones.remove(instalacion);
     }
 
     public void asignarInstalacion(Instalacion instalacion, Entrenador entrenador, List<Socio> socios,

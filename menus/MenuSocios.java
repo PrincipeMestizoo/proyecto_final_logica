@@ -33,6 +33,7 @@ public class MenuSocios {
                 case 2 -> buscarPorId();
                 case 3 -> buscarPorDisciplina();
                 case 4 -> verSocios();
+                case 5 -> eliminarSocios();
                 case 0 -> Util.mostrarMensaje("Volviendo...");
                 default -> Util.mostrarMensaje("Opción inválida");
             }
@@ -84,4 +85,17 @@ public class MenuSocios {
         admin.getAdminSocios().listarSocios();
     }
 
+    private void eliminarSocios() {
+        Util.mostrarMensaje("Ingrese ID:");
+        String id = Util.ingresarTexto();
+
+        Socio socio = admin.getAdminSocios().buscarPorId(id);
+
+        if (socio == null) {
+            Util.mostrarMensaje("Socio no encontrado.");
+        } else {
+            admin.getAdminSocios().eliminarSocio(socio);
+            Util.mostrarMensaje("Socio eliminado correctamente");
+        }
+    }
 }

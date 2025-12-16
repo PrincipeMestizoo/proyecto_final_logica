@@ -17,6 +17,10 @@ public class AdministradorEntrenadores {
         entrenadores.add(entrenador);
     }
 
+    public void eliminarEntrenadores(Entrenador entrenador) {
+        entrenadores.remove(entrenador);
+    }
+
     public Entrenador buscarPorId(String id) {
         for (Entrenador e : entrenadores) {
             if (e.getId().equals(id)) {

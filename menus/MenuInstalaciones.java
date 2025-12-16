@@ -26,6 +26,7 @@ public class MenuInstalaciones {
                     1. Crear instalación
                     2. Asignar instalación
                     3. Ver instalaciones
+                    4. Eliminar instalaciones
                     0. Volver
                     """);
 
@@ -35,6 +36,7 @@ public class MenuInstalaciones {
                 case 1 -> crearInstalacion();
                 case 2 -> asignarInstalacion();
                 case 3 -> verInstalaciones();
+                case 4 -> eliminarInstalacion();
                 case 0 -> Util.mostrarMensaje("Volviendo...");
                 default -> Util.mostrarMensaje("Opción inválida");
             }
@@ -106,4 +108,18 @@ public class MenuInstalaciones {
         admin.getAdminInstalaciones().listarInstalaciones();
     }
 
+    private void eliminarInstalacion() {
+        Util.mostrarMensaje("ID de la instalacion: ");
+        String id = Util.ingresarTexto();
+
+        Instalacion instalacion = admin.getAdminInstalaciones().buscarInstalacion(id);
+
+        if (instalacion == null) {
+            Util.mostrarMensaje("Instalacion no encontrada.");
+        } else {
+            admin.getAdminInstalaciones().eliminarInstalacion(instalacion);
+            Util.mostrarMensaje("Instalacion eliminada");
+        }
+
+    }
 }

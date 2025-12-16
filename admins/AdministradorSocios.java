@@ -18,6 +18,10 @@ public class AdministradorSocios {
         socios.add(socio);
     }
 
+    public void eliminarSocio(Socio socio) {
+        socios.remove(socio);
+    }
+
     public Socio buscarPorId(String id) {
         for (Socio s : socios) {
             if (s.getId().equals(id)) {
