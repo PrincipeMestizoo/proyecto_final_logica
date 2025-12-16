@@ -20,10 +20,10 @@ public class DatosIniciales {
     // Socios
     private static void cargarSocios(Administrador admin) {
 
-        Socio s1 = new Socio("1001", "Daniel", TipoEspecialidad.FUTBOL);
-        Socio s2 = new Socio("1002", "Laura", TipoEspecialidad.NATACION);
-        Socio s3 = new Socio("1003", "Carlos", TipoEspecialidad.GIMNASIO);
-        Socio s4 = new Socio("1004", "Ana", TipoEspecialidad.BOXEO);
+        Socio s1 = new Socio("1", "Daniel", TipoEspecialidad.FUTBOL);
+        Socio s2 = new Socio("2", "Laura", TipoEspecialidad.NATACION);
+        Socio s3 = new Socio("3", "Carlos", TipoEspecialidad.GIMNASIO);
+        Socio s4 = new Socio("4", "Ana", TipoEspecialidad.BOXEO);
 
         admin.getAdminSocios().crearSocio(s1);
         admin.getAdminSocios().crearSocio(s2);
