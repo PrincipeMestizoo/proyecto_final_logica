@@ -2,13 +2,13 @@ package model;
 
 public class Usuario {
     // Atributos de la super clase
-    private String nombre;
     private String id;
+    private String nombre;
 
     // Constructor
-    public Usuario(String nombre, String id) {
-        this.nombre = nombre;
+    public Usuario(String id, String nombre) {
         this.id = id;
+        this.nombre = nombre;
     }
 
     // getters and setters

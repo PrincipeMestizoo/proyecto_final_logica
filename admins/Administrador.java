@@ -1,4 +1,5 @@
 package admins;
+
 public class Administrador {
 
     // Atributos para la clase administrador dependiendo las opciones del usuario.

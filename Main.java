@@ -1,5 +1,8 @@
+import menus.MenuPrincipal;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Aqui inicia el programa");
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.mostrar();
     }
 }

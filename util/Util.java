@@ -22,8 +22,7 @@ public class Util {
     }
 
     public static String ingresarTexto() {
-        String texto = scanner.nextLine();
-        return texto;
+        return scanner.nextLine();
     }
 
 }
