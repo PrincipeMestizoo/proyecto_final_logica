@@ -25,6 +25,7 @@ public class MenuCuotas {
                     1. Generar cuota a socio
                     2. Registrar pago de cuota
                     3. Listar socios con cuotas vencidas
+                    4. Listar cuotas.
                     0. Volver
                     """);
 
@@ -34,6 +35,7 @@ public class MenuCuotas {
                 case 1 -> generarCuota();
                 case 2 -> registrarPago();
                 case 3 -> listarMorosos();
+                case 4 -> verCuotas();
                 case 0 -> Util.mostrarMensaje("Volviendo...");
                 default -> Util.mostrarMensaje("Opción inválida");
             }
@@ -95,4 +97,9 @@ public class MenuCuotas {
 
         morosos.forEach(s -> Util.mostrarMensaje("Socio: " + s.getNombre()));
     }
+
+    private void verCuotas() {
+        admin.getAdminCuotas().listarSociosConCuotas();
+    }
+
 }

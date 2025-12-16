@@ -22,6 +22,7 @@ public class MenuSocios {
                     1. Crear socio
                     2. Buscar socio por ID
                     3. Buscar socios por disciplina
+                    4- Listar socios
                     0. Volver
                     """);
 
@@ -31,6 +32,7 @@ public class MenuSocios {
                 case 1 -> crearSocio();
                 case 2 -> buscarPorId();
                 case 3 -> buscarPorDisciplina();
+                case 4 -> verSocios();
                 case 0 -> Util.mostrarMensaje("Volviendo...");
                 default -> Util.mostrarMensaje("Opción inválida");
             }
@@ -77,4 +79,9 @@ public class MenuSocios {
                 .buscarPorDisciplina(d)
                 .forEach(s -> Util.mostrarMensaje(s.getNombre()));
     }
+
+    private void verSocios() {
+        admin.getAdminSocios().listarSocios();
+    }
+
 }

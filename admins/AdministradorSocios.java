@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import enums.TipoEspecialidad;
 import model.Socio;
+import util.Util;
 
 public class AdministradorSocios {
 
@@ -39,4 +40,22 @@ public class AdministradorSocios {
     public List<Socio> getSocios() {
         return socios;
     }
+
+    public void listarSocios() {
+
+        if (socios.isEmpty()) {
+            Util.mostrarMensaje("No hay socios registrados.");
+            return;
+        }
+
+        Util.mostrarMensaje("=== LISTA DE SOCIOS ===");
+
+        for (Socio s : socios) {
+            Util.mostrarMensaje(
+                    "ID: " + s.getId() +
+                            " | Nombre: " + s.getNombre() +
+                            " | Disciplina: " + s.getDisciplinaPrincipal());
+        }
+    }
+
 }

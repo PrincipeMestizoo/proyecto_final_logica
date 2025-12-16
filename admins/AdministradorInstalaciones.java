@@ -6,6 +6,7 @@ import java.util.List;
 import model.Entrenador;
 import model.Instalacion;
 import model.Socio;
+import util.Util;
 
 public class AdministradorInstalaciones {
 
@@ -31,4 +32,21 @@ public class AdministradorInstalaciones {
     public void setInstalaciones(List<Instalacion> instalaciones) {
         this.instalaciones = instalaciones;
     }
+
+    public void listarInstalaciones() {
+
+        if (instalaciones.isEmpty()) {
+            Util.mostrarMensaje("No hay instalaciones registradas.");
+            return;
+        }
+
+        Util.mostrarMensaje("LISTA DE INSTALACIONES:");
+
+        for (Instalacion inst : instalaciones) {
+            Util.mostrarMensaje(
+                    "ID: " + inst.getIdInstalacion() +
+                            " | Nombre: " + inst.getNombreInstalacion());
+        }
+    }
+
 }

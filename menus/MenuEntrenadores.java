@@ -18,17 +18,19 @@ public class MenuEntrenadores {
 
         do {
             Util.mostrarMensaje("""
-                --- Gestión de Entrenadores ---
-                1. Crear entrenador
-                2. Buscar entrenador por ID
-                0. Volver
-                """);
+                    --- Gestión de Entrenadores ---
+                    1. Crear entrenador
+                    2. Buscar entrenador por ID
+                    3. Listar entrenadores
+                    0. Volver
+                    """);
 
             opcion = Util.ingresarEntero();
 
             switch (opcion) {
                 case 1 -> crearEntrenador();
                 case 2 -> buscarEntrenador();
+                case 3 -> verEntrenadores();
                 case 0 -> Util.mostrarMensaje("Volviendo...");
                 default -> Util.mostrarMensaje("Opción inválida");
             }
@@ -44,8 +46,7 @@ public class MenuEntrenadores {
         String nombre = Util.ingresarTexto();
 
         Util.mostrarMensaje("Especialidad (FUTBOL, NATACION, BOXEO, ATLETISMO, GIMNASIO):");
-        TipoEspecialidad especialidad =
-                TipoEspecialidad.valueOf(Util.ingresarTexto().toUpperCase());
+        TipoEspecialidad especialidad = TipoEspecialidad.valueOf(Util.ingresarTexto().toUpperCase());
 
         Entrenador entrenador = new Entrenador(id, nombre, especialidad);
         admin.getAdminEntrenadores().crearEntrenador(entrenador);
@@ -65,5 +66,9 @@ public class MenuEntrenadores {
             Util.mostrarMensaje("Entrenador: " + e.getNombre());
         }
     }
-}
 
+    private void verEntrenadores() {
+        admin.getAdminEntrenadores().listarEntrenadores();
+    }
+
+}

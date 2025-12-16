@@ -1,6 +1,7 @@
 package menus;
 
 import admins.Administrador;
+import util.DatosIniciales;
 import util.Util;
 
 public class MenuPrincipal {
@@ -9,6 +10,7 @@ public class MenuPrincipal {
 
     public MenuPrincipal() {
         admin = new Administrador();
+        DatosIniciales.cargarDatos(admin);
     }
 
     public void mostrar() {

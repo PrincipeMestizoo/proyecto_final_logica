@@ -6,6 +6,7 @@ import java.util.List;
 import enums.EstadoCuota;
 import model.Cuota;
 import model.Socio;
+import util.Util;
 
 public class AdministradorCuotas {
 
@@ -42,4 +43,25 @@ public class AdministradorCuotas {
         }
         return resultado;
     }
+
+    public void listarSociosConCuotas() {
+
+        if (cuotas.isEmpty()) {
+            Util.mostrarMensaje("No hay cuotas registradas.");
+            return;
+        }
+
+        Util.mostrarMensaje("SOCIOS Y SUS CUOTAS");
+
+        for (Cuota c : cuotas) {
+            Util.mostrarMensaje(
+                    "Socio: " + c.getSocio().getNombre() +
+                            " | ID: " + c.getSocio().getId() +
+                            " | Monto: " + c.getMonto() +
+                            " | Estado: " + c.getEstado() +
+                            " | Vence: " + c.getFechaVencimiento() +
+                            " | Pagado: " + c.getFechaPago());
+        }
+    }
+
 }

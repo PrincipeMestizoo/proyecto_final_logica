@@ -25,6 +25,7 @@ public class MenuInstalaciones {
                     --- Gestión de Instalaciones ---
                     1. Crear instalación
                     2. Asignar instalación
+                    3. Ver instalaciones
                     0. Volver
                     """);
 
@@ -33,6 +34,7 @@ public class MenuInstalaciones {
             switch (opcion) {
                 case 1 -> crearInstalacion();
                 case 2 -> asignarInstalacion();
+                case 3 -> verInstalaciones();
                 case 0 -> Util.mostrarMensaje("Volviendo...");
                 default -> Util.mostrarMensaje("Opción inválida");
             }
@@ -99,4 +101,9 @@ public class MenuInstalaciones {
 
         Util.mostrarMensaje("Instalación asignada correctamente.");
     }
+
+    private void verInstalaciones() {
+        admin.getAdminInstalaciones().listarInstalaciones();
+    }
+
 }
