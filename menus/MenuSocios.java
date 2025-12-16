@@ -23,6 +23,7 @@ public class MenuSocios {
                     2. Buscar socio por ID
                     3. Buscar socios por disciplina
                     4- Listar socios
+                    5- Eliminar socios
                     0. Volver
                     """);
 
