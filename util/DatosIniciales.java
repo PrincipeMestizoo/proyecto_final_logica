@@ -1,6 +1,7 @@
 package util;
 
 import java.time.LocalDate;
+
 import admins.Administrador;
 import enums.TipoEspecialidad;
 import model.Entrenador;
@@ -17,13 +18,13 @@ public class DatosIniciales {
         cargarCuotas(admin);
     }
 
-    // Socios
+    // SOCIOS
     private static void cargarSocios(Administrador admin) {
 
-        Socio s1 = new Socio("1", "Daniel", TipoEspecialidad.FUTBOL);
-        Socio s2 = new Socio("2", "Laura", TipoEspecialidad.NATACION);
-        Socio s3 = new Socio("3", "Carlos", TipoEspecialidad.GIMNASIO);
-        Socio s4 = new Socio("4", "Ana", TipoEspecialidad.BOXEO);
+        Socio s1 = new Socio("1001", "Daniel", TipoEspecialidad.FUTBOL);
+        Socio s2 = new Socio("1002", "Laura", TipoEspecialidad.NATACION);
+        Socio s3 = new Socio("1003", "Carlos", TipoEspecialidad.GIMNASIO);
+        Socio s4 = new Socio("1004", "Ana", TipoEspecialidad.BOXEO);
 
         admin.getAdminSocios().crearSocio(s1);
         admin.getAdminSocios().crearSocio(s2);
@@ -31,7 +32,7 @@ public class DatosIniciales {
         admin.getAdminSocios().crearSocio(s4);
     }
 
-    // Entrenadores
+    // ENTRENADORES
     private static void cargarEntrenadores(Administrador admin) {
 
         Entrenador e1 = new Entrenador("E01", "Miguel", TipoEspecialidad.FUTBOL);
@@ -45,7 +46,7 @@ public class DatosIniciales {
         admin.getAdminEntrenadores().crearEntrenador(e4);
     }
 
-    // Instalaciones
+    // INSTALACIONES
     private static void cargarInstalaciones(Administrador admin) {
 
         Instalacion i1 = new Instalacion("I01", "Cancha Principal");
@@ -55,7 +56,7 @@ public class DatosIniciales {
         admin.getAdminInstalaciones().agregarInstalacion(i2);
     }
 
-    // Cuotas
+    // CUOTAS
     private static void cargarCuotas(Administrador admin) {
 
         Socio s1 = admin.getAdminSocios().buscarPorId("1001");
