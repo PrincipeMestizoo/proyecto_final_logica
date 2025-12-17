@@ -25,11 +25,17 @@ public class DatosIniciales {
         Socio s2 = new Socio("1002", "Laura", TipoEspecialidad.NATACION);
         Socio s3 = new Socio("1003", "Carlos", TipoEspecialidad.GIMNASIO);
         Socio s4 = new Socio("1004", "Ana", TipoEspecialidad.BOXEO);
+        Socio s5 = new Socio("1005", "Valentina", TipoEspecialidad.BOXEO);
+        Socio s6 = new Socio("1006", "Pedro", TipoEspecialidad.BOXEO);
+        Socio s7 = new Socio("1007", "Karol", TipoEspecialidad.BOXEO);
 
         admin.getAdminSocios().crearSocio(s1);
         admin.getAdminSocios().crearSocio(s2);
         admin.getAdminSocios().crearSocio(s3);
         admin.getAdminSocios().crearSocio(s4);
+        admin.getAdminSocios().crearSocio(s5);
+        admin.getAdminSocios().crearSocio(s6);
+        admin.getAdminSocios().crearSocio(s7);
     }
 
     // ENTRENADORES
@@ -65,7 +71,10 @@ public class DatosIniciales {
 
         // Cuotas vencidas
         admin.getAdminCuotas().generarCuota(
-                s1, 120000, LocalDate.now().minusDays(10));
+                s1, 120000, LocalDate.now().minusDays(30));
+
+        admin.getAdminCuotas().generarCuota(
+                s1, 240000, LocalDate.now().minusDays(60));
 
         admin.getAdminCuotas().generarCuota(
                 s2, 150000, LocalDate.now().minusDays(5));
