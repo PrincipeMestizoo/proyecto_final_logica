@@ -10,7 +10,7 @@ public class AdministradorIa {
 
     public static void main(String[] args) {
         String apiKey = "AIzaSyA4GH4m80cK6fobqQvNDr031v-WqLKI6Zo"; // <--- Pega tu llave aquí
-        String prompt = "Soy el administrador de un club deportivo. El socio tiene un riesgo de abandono Dame 3 estrategias cortas y motivadoras para evitar que se vaya del club.";
+        String prompt = "Soy el administrador de un club deportivo. El socio tiene un riesgo de abandono Dame 3 estrategias cortas y motivadoras para evitar que se vaya del club. en 30 palabras";
 
         // URL del modelo (Usamos gemini-2.5-flash por ser rápido y eficiente)
         String url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="
