@@ -31,5 +31,6 @@ public class Administrador {
 
     public AdministradorInstalaciones getAdminInstalaciones() {
         return adminInstalaciones;
+
     }
 }
